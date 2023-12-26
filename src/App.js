@@ -8,10 +8,14 @@ function App() {
     <div className="container">
     <Header />
     
-    {/*<h1>Hello from react</h1>
-     <h2>Hello {name}</h2>
+    {
+    /*
+    <h1>Hello from react</h1>
+    <h2>Hello {name}</h2>
     <h2>Hello {1 + 2}</h2>
-    <h2>Hello {x ? 'YES' : 'NO'}</h2> */}
+    <h2>Hello {x ? 'YES' : 'NO'}</h2>
+    */
+    }
     </div>
   );
 }
