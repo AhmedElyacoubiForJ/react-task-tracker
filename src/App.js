@@ -1,5 +1,6 @@
 //import React from "react";
 import Header from "./components/Header";
+import Tasks from "./components/Tasks";
 
 function App() {
   //const name = "Brad"
@@ -7,15 +8,12 @@ function App() {
   return (
     <div className="container">
     <Header />
+    <Tasks />
     
-    {
-    /*
-    <h1>Hello from react</h1>
+    {/*<h1>Hello from react</h1>
     <h2>Hello {name}</h2>
     <h2>Hello {1 + 2}</h2>
-    <h2>Hello {x ? 'YES' : 'NO'}</h2>
-    */
-    }
+    <h2>Hello {x ? 'YES' : 'NO'}</h2>*/}
     </div>
   );
 }

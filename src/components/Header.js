@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import Button from './Button'
 
 const Header = ({title}) => { // props as object
+  
   const onClick = () => {
     console.log('Click')
   }
