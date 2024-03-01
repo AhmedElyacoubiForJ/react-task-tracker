@@ -23,10 +23,15 @@ export const domDemo = () => {
     }); */
 
     // Manipulating doms
-    const ul = document.querySelector('.items');
+   /*  const ul = document.querySelector('.items');
     // ul.remove();
     // ul.lastElementChild.remove();
     ul.firstElementChild.textContent = 'Hello';
     ul.children[1].innerText = 'Brad';
-    ul.lastElementChild.innerHTML = '<h1>Hello</h1>';
+    ul.lastElementChild.innerHTML = '<h1>Hello</h1>'; */
+
+    // css manipulation
+    /* const btn = document.querySelector('.btn');
+    btn.style.background = 'red';
+    console.log(btn.style.background); */
 }
