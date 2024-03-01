@@ -48,11 +48,26 @@ export const objectInArraySection = () => {
     } */
 
     // forEach, map, filter
-    // forEach can take a function
+    /* // forEach can take a function
     todos.forEach(function(todo) {
         console.log(todo.text);
     })
+    // arrow function
     todos.forEach((todo) => {
         console.log(todo.id);
-    })
+    }) */
+
+    // map
+    /* const addDescriptionToEachTodo = todos.map((todo) => {
+        todo.description = todo.text + ': update me';
+        //console.log(todo);
+        return todo.description;
+    });
+    console.log(addDescriptionToEachTodo); */
+
+    const todoText = todos.map((todo) => {
+        return todo.text;
+    });
+    console.log(todoText);
+    
 }
