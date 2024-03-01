@@ -17,20 +17,35 @@ export const objectInArraySection = () => {
         }
     ];
 
-    console.log(todos);
+   /*  console.log(todos);
     // grab Meeting with boss
-    console.log(todos[1].text);
+    console.log(todos[1].text); */
 
     // convert to json
-    const todosJSON = JSON.stringify(todos)
+   /*  const todosJSON = JSON.stringify(todos)
     // how to send data to server as json string
-    console.log(todosJSON);
+    console.log(todosJSON); */
 
-    // For loops
+    // Loops
+    /* // For
     for (let i = 0; i < todos.length; i++) {
         const todo = todos[i];
         console.log(`For loop Namber: ${i}` , todo)
         //console.log(`For loop Namber: ${i} ${todo}`);  
-    }
-    
+    } */
+   /*  
+    // for but more readable
+    for (let todo of todos) {
+        console.log(todo)
+    } */
+
+    /* // While
+    let i = 0;
+    while(i < todos.length) {
+        const todo = todos[i];
+        console.log(`For loop Number: ${i}` , todo);
+        i++;
+    } */
+
+
 }
