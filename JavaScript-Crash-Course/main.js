@@ -1,4 +1,4 @@
-import { arraySection } from './arrays-demo';
+import { arraySection } from './arrays-demo.js';
 
 /* console.log("Hello World");
 console.error('This is an error');
@@ -49,5 +49,6 @@ const itTerminologies = 'technology, computers, it, java, react, Spring Boot';
 console.log(itTerminologies.split(', ')) */
 
 // Arrays
+arraySection();
 
 
