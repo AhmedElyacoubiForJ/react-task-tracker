@@ -47,5 +47,12 @@ export const objectInArraySection = () => {
         i++;
     } */
 
-
+    // forEach, map, filter
+    // forEach can take a function
+    todos.forEach(function(todo) {
+        console.log(todo.text);
+    })
+    todos.forEach((todo) => {
+        console.log(todo.id);
+    })
 }
