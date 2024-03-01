@@ -14,5 +14,19 @@ export const domDemo = () => {
     // Multiple element
     //console.log(document.querySelectorAll('.item')); // not recomemded can be a class if ...or any thing
     //console.log(document.getElementsByClassName('item'));
-    console.log(document.getElementsByTagName('li'));
+    //console.log(document.getElementsByTagName('li'));
+
+    // loop
+    /* const items = document.querySelectorAll('.item');
+    items.forEach((item) => {
+        console.log(item);
+    }); */
+
+    // Manipulating doms
+    const ul = document.querySelector('.items');
+    // ul.remove();
+    // ul.lastElementChild.remove();
+    ul.firstElementChild.textContent = 'Hello';
+    ul.children[1].innerText = 'Brad';
+    ul.lastElementChild.innerHTML = '<h1>Hello</h1>';
 }
