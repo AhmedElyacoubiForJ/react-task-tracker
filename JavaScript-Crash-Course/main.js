@@ -30,4 +30,4 @@ import { classDemo } from './oop-dealing-with-classes.js'
 // functionDemo();
 
 // class & object demo
-classDemo();
+// classDemo();
