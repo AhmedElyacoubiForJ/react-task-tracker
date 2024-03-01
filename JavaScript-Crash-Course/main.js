@@ -6,6 +6,7 @@ import { dealingWithString } from './dealing-with-string.js'
 import { switchDemo } from './switch-demo.js'
 import { functionDemo } from './function-demo.js'
 import { classDemo } from './oop-dealing-with-classes.js'
+import { domDemo } from './dealing-with-doms.js'
 
 // intro JS
 // introToJS();
@@ -31,3 +32,6 @@ import { classDemo } from './oop-dealing-with-classes.js'
 
 // class & object demo
 // classDemo();
+
+// Dealing with dom's
+domDemo();
