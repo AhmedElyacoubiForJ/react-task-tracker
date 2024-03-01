@@ -3,6 +3,9 @@ import { objectLeteralSecition } from './objects-literals.js'
 import { objectInArraySection } from './dealing-with-objects-in-arrays.js'
 import { introToJS } from './introInJS.js';
 import { dealingWithString } from './dealing-with-string.js'
+import { switchDemo } from './switch-demo.js'
+import { functionDemo } from './function-demo.js'
+import { classDemo } from './oop-dealing-with-classes.js'
 
 // intro JS
 // introToJS();
@@ -20,3 +23,11 @@ import { dealingWithString } from './dealing-with-string.js'
 // Object in arrays section
 // objectInArraySection();
 
+// switch demo
+// switchDemo();
+
+// functions demo
+// functionDemo();
+
+// class & object demo
+classDemo();
