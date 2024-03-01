@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import Button from './Button'
 
-const Header = ({title}) => { // props as object
-  
+const Header = ({ title }) => { // props as object
+
   const onClick = () => {
     console.log('Click')
   }
@@ -11,7 +11,7 @@ const Header = ({title}) => { // props as object
     <header className='header'>
       <h1>{title}</h1>        {/* props.title*/}
       {/* reusable comp. w. diff. props value*/}
-      <Button color='green' text='Add' onClick={onClick}/>
+      <Button color='green' text='Add' onClick={onClick} />
     </header>
   )
 }
