@@ -1,5 +1,6 @@
 import { arraySection } from './arrays-demo.js';
 import { objectLeteralSecition } from './objects-literals.js'
+import { objectInArraySection } from './dealing-with-objects-in-arrays.js'
 
 // TODO in seperate js files
 /* console.log("Hello World");
@@ -54,6 +55,8 @@ console.log(itTerminologies.split(', ')) */
 // arraySection();
 
 // Object Section
-objectLeteralSecition();
+//objectLeteralSecition();
 
+// Object in arrays section
+objectInArraySection();
 
