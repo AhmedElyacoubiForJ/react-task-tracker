@@ -17,14 +17,14 @@ export const objectInArraySection = () => {
         }
     ];
 
-   /*  console.log(todos);
-    // grab Meeting with boss
-    console.log(todos[1].text); */
+    /*  console.log(todos);
+     // grab Meeting with boss
+     console.log(todos[1].text); */
 
     // convert to json
-   /*  const todosJSON = JSON.stringify(todos)
-    // how to send data to server as json string
-    console.log(todosJSON); */
+    /*  const todosJSON = JSON.stringify(todos)
+     // how to send data to server as json string
+     console.log(todosJSON); */
 
     // Loops
     /* // For
@@ -33,11 +33,11 @@ export const objectInArraySection = () => {
         console.log(`For loop Namber: ${i}` , todo)
         //console.log(`For loop Namber: ${i} ${todo}`);  
     } */
-   /*  
-    // for but more readable
-    for (let todo of todos) {
-        console.log(todo)
-    } */
+    /*  
+     // for but more readable
+     for (let todo of todos) {
+         console.log(todo)
+     } */
 
     /* // While
     let i = 0;
@@ -64,10 +64,28 @@ export const objectInArraySection = () => {
         return todo.description;
     });
     console.log(addDescriptionToEachTodo); */
+    /* 
+        const todoText = todos.map((todo) => {
+            return todo.text;
+        });
+        console.log(todoText); */
 
-    const todoText = todos.map((todo) => {
-        return todo.text;
+    // Filter
+    const todosCompleted = todos.filter((todo) => {
+        return todo.isCompleted === true;
     });
-    console.log(todoText);
-    
+    console.log(todosCompleted);
+
+    const todosCompletedTxt = todosCompleted.map((todo) => {
+        return todo.text
+    })
+    console.log(todosCompletedTxt);
+
+    // OR filterd and mapped in chain
+    const todosCompletedAndMapped = todos.filter((todo) => {
+        return todo.isCompleted === true;
+    }).map((todo) => {
+        return todo.text
+    });
+    console.log(todosCompletedAndMapped);
 }
