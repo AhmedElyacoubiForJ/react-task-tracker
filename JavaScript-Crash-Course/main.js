@@ -1,5 +1,7 @@
 import { arraySection } from './arrays-demo.js';
+import { objectLeteralSecition } from './objects-literals.js'
 
+// TODO in seperate js files
 /* console.log("Hello World");
 console.error('This is an error');
 console.warn('This is an warning');
@@ -48,7 +50,10 @@ console.log(firstName.split(''))
 const itTerminologies = 'technology, computers, it, java, react, Spring Boot';
 console.log(itTerminologies.split(', ')) */
 
-// Arrays
-arraySection();
+// Array Section
+// arraySection();
+
+// Object Section
+objectLeteralSecition();
 
 
