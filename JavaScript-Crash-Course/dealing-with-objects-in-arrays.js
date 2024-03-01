@@ -22,7 +22,15 @@ export const objectInArraySection = () => {
     console.log(todos[1].text);
 
     // convert to json
-    const todoJSON = JSON.stringify(todos)
+    const todosJSON = JSON.stringify(todos)
     // how to send data to server as json string
-    console.log(todoJSON);
+    console.log(todosJSON);
+
+    // For loops
+    for (let i = 0; i < todos.length; i++) {
+        const todo = todos[i];
+        console.log(`For loop Namber: ${i}` , todo)
+        //console.log(`For loop Namber: ${i} ${todo}`);  
+    }
+    
 }
