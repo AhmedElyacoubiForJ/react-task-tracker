@@ -47,5 +47,6 @@ export const domDemo = () => {
         console.log(form);
         form.style.background = 'red';
         document.querySelector('body').classList.add('bg-dark'); // class s. style.css
+        document.querySelector('.items').lastElementChild.innerHTML = '<h1>Hello</h1>';
     });
 }
