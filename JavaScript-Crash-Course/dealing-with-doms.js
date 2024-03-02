@@ -50,5 +50,33 @@ export const domDemo = () => {
         document.querySelector('.items').lastElementChild.innerHTML = '<h1>Hello</h1>';
     }); */
 
-    // 
+    // form validation and user list manipulation using form data
+    const myForm = document.querySelector('#my-form'); // id
+    const nameInput = document.querySelector('#name'); // id
+    const emailInput = document.querySelector('#email'); // id
+    const msg = document.querySelector('.msg'); // class
+    const userList = document.querySelector('#users'); // id
+
+    myForm.addEventListener('submit', onSubmit);
+    function onSubmit(e) {
+        e.preventDefault();
+
+        if (nameInput.value === '' || emailInput.value === '') {
+            msg.classList.add('error');
+            msg.innerHTML = 'Please enter all fields';
+
+            setTimeout(() => msg.remove(), 3000); // in 3 s will be removed 
+        } else {
+            const li = document.createElement('li');
+
+            li.appendChild(document.createTextNode(
+                `${nameInput.value} ${emailInput.value}`
+            ));
+            userList.appendChild(li);
+            
+            // clear fields
+            nameInput.value = '';
+            emailInput.value = '';
+        }
+    }
 }
