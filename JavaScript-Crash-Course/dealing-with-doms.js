@@ -23,15 +23,29 @@ export const domDemo = () => {
     }); */
 
     // Manipulating doms
-   /*  const ul = document.querySelector('.items');
-    // ul.remove();
-    // ul.lastElementChild.remove();
-    ul.firstElementChild.textContent = 'Hello';
-    ul.children[1].innerText = 'Brad';
-    ul.lastElementChild.innerHTML = '<h1>Hello</h1>'; */
+    /*  const ul = document.querySelector('.items');
+     // ul.remove();
+     // ul.lastElementChild.remove();
+     ul.firstElementChild.textContent = 'Hello';
+     ul.children[1].innerText = 'Brad';
+     ul.lastElementChild.innerHTML = '<h1>Hello</h1>'; */
 
     // css manipulation
     /* const btn = document.querySelector('.btn');
     btn.style.background = 'red';
     console.log(btn.style.background); */
+
+    // add enventlistener
+    const btn = document.querySelector('.btn');
+    btn.addEventListener('click', (e) => {
+        e.preventDefault(); // go no away before the form not submited
+        // console.log('clicked');
+        // console.log(e.target);
+        // console.log(e.target.className);
+        // console.log(e.target.value);
+        const form = document.querySelector('#my-form'); // let's grab element w. id
+        console.log(form);
+        form.style.background = 'red';
+        //document.querySelector('body').classList
+    });
 }
