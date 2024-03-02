@@ -1,3 +1,4 @@
+/* css is from the teacher, but is not a goal of the course. ie. is not part of the training.  */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
 * {
@@ -5,7 +6,7 @@
   margin: 0;
   padding: 0;
 }
-
+teacher
 body {
   font-family: 'Poppins', sans-serif;
 }
