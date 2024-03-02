@@ -34,4 +34,4 @@ import { domDemo } from './dealing-with-doms.js'
 // classDemo();
 
 // Dealing with dom's
-domDemo();
+// domDemo();
