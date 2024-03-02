@@ -46,6 +46,6 @@ export const domDemo = () => {
         const form = document.querySelector('#my-form'); // let's grab element w. id
         console.log(form);
         form.style.background = 'red';
-        //document.querySelector('body').classList
+        document.querySelector('body').classList.add('bg-dark'); // class s. style.css
     });
 }
