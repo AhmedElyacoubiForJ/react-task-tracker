@@ -35,9 +35,9 @@ export const domDemo = () => {
     btn.style.background = 'red';
     console.log(btn.style.background); */
 
-    // add enventlistener
-    const btn = document.querySelector('.btn');
-    btn.addEventListener('click', (e) => {
+    // add enventlistener and manipulate css
+    /* const btn = document.querySelector('.btn');
+    btn.addEventListener('click', (e) => { // mouseover, mouseout
         e.preventDefault(); // go no away before the form not submited
         // console.log('clicked');
         // console.log(e.target);
@@ -48,5 +48,7 @@ export const domDemo = () => {
         form.style.background = 'red';
         document.querySelector('body').classList.add('bg-dark'); // class s. style.css
         document.querySelector('.items').lastElementChild.innerHTML = '<h1>Hello</h1>';
-    });
+    }); */
+
+    // 
 }
