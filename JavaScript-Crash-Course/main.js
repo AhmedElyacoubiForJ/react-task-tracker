@@ -7,6 +7,7 @@ import { switchDemo } from './switch-demo.js'
 import { functionDemo } from './function-demo.js'
 import { classDemo } from './oop-dealing-with-classes.js'
 import { domDemo } from './dealing-with-doms.js'
+import { objectCopyDemo } from './object-copy-demo.js'
 
 // intro JS
 // introToJS();
@@ -35,3 +36,6 @@ import { domDemo } from './dealing-with-doms.js'
 
 // Dealing with dom's
 // domDemo();
+
+// Object copy
+objectCopyDemo(1);
