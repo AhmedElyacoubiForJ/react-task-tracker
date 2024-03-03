@@ -1,3 +1,4 @@
+// impt snip.
 import PropTypes from 'prop-types'
 
 const Button = ({ color, text, onClick }) => {
@@ -15,8 +16,9 @@ const Button = ({ color, text, onClick }) => {
 Button.defaultProps = {
   color: 'steelblue'
 }
+
 Button.propTypes = {
-  title: PropTypes.string,
+  text: PropTypes.string,
   color: PropTypes.string,
   onClick: PropTypes.func,
 }

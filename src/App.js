@@ -23,26 +23,38 @@ function App() {
       "day": "Feb 5th at 2:30pm",
       "reminder": false,
     }])
+
   // Delete Task
   const deleteTask = (id) => {
     setTasks(
-      tasks.filter((task) => (task.id != id))
+      tasks.filter(
+        (task) => (task.id != id)
+      )
     )
-    //console.log('delete', id);
   }
+
   // toggle remeinder
   const toggleReminder = (id) => {
-    //console.log(id)
-    setTasks(tasks.map((task) => task.id == id ? 
-    {...task, reminder: !task.reminder} : task))
+    setTasks(
+      tasks.map(
+        (task) => task.id == id ?
+          { ...task, reminder: !task.reminder } :
+          task
+      )
+    )
   }
 
   return (
     <div className="container">
       <Header />
-      { tasks.length > 0 ?
-        (<Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />) : 
-        ('No Tasks to show')
+      {
+        tasks.length > 0 ?
+          (<Tasks
+            tasks={tasks}
+            onDelete={deleteTask}
+            onToggle={toggleReminder}
+          />) :
+          ('No Tasks to show')
       }
     </div>
   );

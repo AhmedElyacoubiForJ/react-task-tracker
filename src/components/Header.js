@@ -13,7 +13,11 @@ const Header = ({ title }) => { // props destructed to component property
   return (
     <header className='header'>
       <h1>{title}</h1>
-      <Button color='green' text='Add' onClick={onClick} />
+      <Button
+        color='green'
+        text='Add'
+        onClick={onClick}
+      />
     </header>
   )
 }
