@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header_T from './components-repetition/Header_T';
-import Footer from "./components-repetition/Footer";
-import Tasks_T from './components-repetition/Tasks_T';
-import AddTask from "./components-repetition/AddTask";
-import About from "./components-repetition/About";
+import Header_T from './components/Header_T';
+import Footer from "./components/Footer";
+import Tasks_T from './components/Tasks_T';
+import AddTask from "./components/AddTask";
+import About from "./components/About";
 
 function App() {
   const [showAddTask, SetShowAddTask] = useState(false);
