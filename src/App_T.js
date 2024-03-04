@@ -5,38 +5,16 @@ import AddTask from "./components-repetition/AddTask";
 
 function App_T() {
   const [showAddTask, SetShowAddTask] = useState(false);
-  //const [tasks, setTasks] = useState([]);
-  const [tasks, setTasks] = useState(
-    [
-      {
-        "id": 1,
-        "text": "Doctors Appointment",
-        "day": "Feb 5th at 2:30pm",
-        "reminder": true,
-      },
-      {
-        "id": 2,
-        "text": "Meeting at School",
-        "day": "Feb 6th at 1:30pm",
-        "reminder": true,
-      },
-      {
-        "id": 3,
-        "text": "Food Schopping",
-        "day": "Feb 5th at 2:30pm",
-        "reminder": false,
-      }
-    ]
-  )
-
+  const [tasks, setTasks] = useState([]);
+  
   useEffect(
     () => {
       const getTasks = async () => {
-        const tasksFromServer = await fetchTasks();
-        //setTasks(tasksFromServer);
+        const tasksFromJsonServer = await fetchTasks();
+        setTasks(tasksFromJsonServer);
       };
       // the call
-      //getTasks();
+      getTasks();
     },
     []
   );
@@ -45,7 +23,8 @@ function App_T() {
   const fetchTasks = async () => {
     const response = await fetch('http://localhost:5000/tasks');
     const data = await response.json();
-    console.log(data);
+    return data;
+    //console.log(data);
   }
 
   // delete task
