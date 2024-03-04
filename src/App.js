@@ -121,6 +121,7 @@ function App() {
           onAdd={() => { SetShowAddTask(!showAddTask) }}
           showAdd={showAddTask}
         />
+
         {
           showAddTask && <AddTask onAdd={addTask} />
         }
@@ -132,6 +133,7 @@ function App() {
               onDelete={deleteTask} /> :
             'No Tasks to schow'
         }
+        
         <Routes>
           <Route path='/about' Component={About} />
         </Routes>
