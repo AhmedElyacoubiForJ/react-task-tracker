@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import Header_T from './components-repetition/Header_T.js'
-import Tasks_T from './components-repetition/Tasks_T.js';
+import Header_T from './components-repetition/Header_T';
+import Tasks_T from './components-repetition/Tasks_T';
+import AddTask from "./components-repetition/AddTask";
 
 function App_T() {
-  const [tasks, setTasks] = useState([])
-  /* const [tasks, setTasks] = useState(
+  //const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(
     [
       {
         "id": 1,
@@ -25,17 +26,26 @@ function App_T() {
         "reminder": false,
       }
     ]
-  ) */
+  )
 
-  useEffect(() => {
-    const fetchTasks = async () => {
-      const response = await fetch('http://localhost:5000/tasks');
-      const data = await response.json();
-      console.log(data);
-    }
+  useEffect(
+    () => {
+      const getTasks = async () => {
+        const tasksFromServer = await fetchTasks();
+        //setTasks(tasksFromServer);
+      };
+      // the call
+      //getTasks();
+    },
+    []
+  );
 
-    fetchTasks();
-  })
+  // Fetch Tasks func.
+  const fetchTasks = async () => {
+    const response = await fetch('http://localhost:5000/tasks');
+    const data = await response.json();
+    console.log(data);
+  }
 
   // delete task
   const deleteTask = (id) => {
@@ -51,7 +61,6 @@ function App_T() {
 
   // toggle reminder
   const toggleReminder = (id) => {
-    console.log('Reminder', id)
     setTasks(
       tasks.map(
         (task) => {
@@ -61,13 +70,22 @@ function App_T() {
     )
   }
 
+  // Add Task
+  const addTask = (task) => {
+    console.log(task)
+  }
+
   return (
     <div className="container">
-      {/* <h1>Task Tracker</h1> */}
-      {/* <Header_T title='Hello from header' /> */}
       <Header_T />
+      <AddTask onAdd={addTask} />
       {
-        tasks.length > 0 ? <Tasks_T onToggle={toggleReminder} tasks={tasks} onDelete={deleteTask} /> : 'No Tasks to schow'
+        tasks.length > 0 ?
+          <Tasks_T
+            onToggle={toggleReminder}
+            tasks={tasks}
+            onDelete={deleteTask} /> :
+          'No Tasks to schow'
       }
 
     </div>
