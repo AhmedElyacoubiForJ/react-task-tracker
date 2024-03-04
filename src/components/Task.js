@@ -1,6 +1,6 @@
 import { FaTimes } from 'react-icons/fa'
 
-const Task_T = ({ task, onDelete, onToggle }) => {
+const Task = ({ task, onDelete, onToggle }) => {
     return (
         <div className="task" onDoubleClick={() => {onToggle(task.id)}}>
             <h3>
@@ -15,4 +15,4 @@ const Task_T = ({ task, onDelete, onToggle }) => {
     )
 }
 
-export default Task_T
+export default Task

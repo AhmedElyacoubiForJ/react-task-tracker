@@ -1,25 +1,25 @@
 // impt
 import PropTypes from 'prop-types'
-import Button_T from './Button_T'
+import Button from './Button'
 // rafce
-const Header_T = ({ title, onAdd, showAdd }) => {
+const Header = ({ title, onAdd, showAdd }) => {
     return (
         <header className='header'>
             {/* <h1 style={headingStyle}>{title}</h1> */}
             <h1>{title}</h1>
-            <Button_T
-            color={showAdd ? 'red' : 'green'}
-            text={showAdd ? 'Close' : 'Add'}
-            onClick={onAdd} />
+            <Button
+                color={showAdd ? 'red' : 'green'}
+                text={showAdd ? 'Close' : 'Add'}
+                onClick={onAdd} />
         </header>
     )
 }
 
-Header_T.defaultProps = {
+Header.defaultProps = {
     title: 'Task Tracker',
 }
 
-Header_T.propTypes = {
+Header.propTypes = {
     title: PropTypes.string.isRequired,
 }
 
@@ -29,4 +29,4 @@ Header_T.propTypes = {
     backgroundColor: 'black'
 } */
 
-export default Header_T
+export default Header

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-const Button_T = ({ color, text, onClick }) => {
+const Button = ({ color, text, onClick }) => {
     return (
         <button
             onClick={onClick}
@@ -11,13 +11,15 @@ const Button_T = ({ color, text, onClick }) => {
     )
 }
 
-Button_T.defaultProps = {
+Button.defaultProps = {
     color: 'steelblue',
     text: 'Add'
 }
-Button_T.propTypes = {
+
+Button.propTypes = {
     text: PropTypes.string.isRequired,
     color: PropTypes.string,
     onClick: PropTypes.func
 }
-export default Button_T
+
+export default Button

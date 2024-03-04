@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header_T from './components/Header_T';
+import Header from './components/Header';
 import Footer from "./components/Footer";
-import Tasks_T from './components/Tasks_T';
+import Tasks from './components/Tasks';
 import AddTask from "./components/AddTask";
 import About from "./components/About";
 
@@ -96,7 +96,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="container">
-        <Header_T
+        <Header
           onAdd={() => { SetShowAddTask(!showAddTask) }}
           showAdd={showAddTask}
         />
@@ -105,7 +105,7 @@ function App() {
         }
         {
           tasks.length > 0 ?
-            <Tasks_T
+            <Tasks
               onToggle={toggleReminder}
               tasks={tasks}
               onDelete={deleteTask} /> :

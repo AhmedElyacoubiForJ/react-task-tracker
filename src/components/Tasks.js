@@ -1,12 +1,12 @@
-import Task_T from "./Task_T";
+import Task from "./Task";
 
-const Tasks_T = ({ tasks, onDelete, onToggle }) => {
+const Tasks = ({ tasks, onDelete, onToggle }) => {
     return (
         <>
             {
                 tasks.map(
                     (task, index) => (
-                        <Task_T
+                        <Task
                             key={index}
                             task={task}
                             onDelete={onDelete}
@@ -18,4 +18,4 @@ const Tasks_T = ({ tasks, onDelete, onToggle }) => {
         </>
     )
 }
-export default Tasks_T;
+export default Tasks;
