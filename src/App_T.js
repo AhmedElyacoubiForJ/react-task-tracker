@@ -17,12 +17,17 @@ function App_T() {
     getTasks();
   }, []);
 
-  // fetch json db function definition
+  // fetch tasks from json db function definition
   const fetchTasks = async () => {
     const response = await fetch('http://localhost:5000/tasks');
     const data = await response.json();
-    //console.log(data);
     return data;
+  }
+
+  const fetchTask = async (id) => {
+    const response = await fetch(`http://localhost:5000/tasks/${id}`);
+    const task = await response.json();
+    return task;
   }
 
   // delete task
@@ -41,11 +46,25 @@ function App_T() {
   }
 
   // toggle reminder
-  const toggleReminder = (id) => {
+  const toggleReminder = async (id) => {
+    const taskToToggle = await fetchTask(id);
+    const updatedTask = {...taskToToggle, reminder: !taskToToggle.reminder};
+    //console.log('Update from UI', updatedTask);
+    const response = await fetch(`http://localhost:5000/tasks/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(updatedTask)
+    });
+
+    const data = await response.json();
+    //console.log('from json server', data);
+
     setTasks(
       tasks.map(
         (task) => {
-          return task.id === id ? { ...task, remeinder: !task.reminder } : task;
+          return task.id === id ? { ...task, remeinder: !data.reminder } : task;
         }
       )
     )
