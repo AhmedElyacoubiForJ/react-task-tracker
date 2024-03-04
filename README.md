@@ -5,6 +5,11 @@ Video tutorial [React task tracker](https://www.youtube.com/watch?v=w7ejDZ8SWv8)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# npm run build
+# npm i -g serve (install basic http server)
+
+# bash: serve -s build -p 5000
+
 ## Available Scripts
 
 In the project directory, you can run:
