@@ -20,7 +20,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 And to run it we add a script call in package.json
 "server": "json-server --watch db.json --port 5000"
 ### `npm run server` (added tasks as json format in db.json file)
-Open [http://localhost:5000/tasks](http://localhost:5000/tasks) to view tasks in the browser.
+Open [http://localhost:5000/tasks](http://localhost:5000/tasks) to view tasks in the browser
+
+### `npm i react-router-dom` (adding routing to our Application)
 
 
 ## Learn More
