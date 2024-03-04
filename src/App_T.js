@@ -4,6 +4,7 @@ import Tasks_T from './components-repetition/Tasks_T';
 import AddTask from "./components-repetition/AddTask";
 
 function App_T() {
+  const [showAddTask, SetShowAddTask] = useState(false);
   //const [tasks, setTasks] = useState([]);
   const [tasks, setTasks] = useState(
     [
@@ -49,7 +50,6 @@ function App_T() {
 
   // delete task
   const deleteTask = (id) => {
-    // console.log('delete', id);
     setTasks(
       tasks.filter(
         (task) => {
@@ -72,15 +72,20 @@ function App_T() {
 
   // Add Task
   const addTask = (task) => {
-    const id = Math.floor(Math.random()*10000) + 1
-    const newTask = {id, ...task}
+    const id = Math.floor(Math.random() * 10000) + 1
+    const newTask = { id, ...task }
     setTasks([...tasks, newTask])
   }
 
   return (
     <div className="container">
-      <Header_T />
-      <AddTask onAdd={addTask} />
+      <Header_T
+        onAdd={() => { SetShowAddTask(!showAddTask) }}
+        showAdd={showAddTask}
+      />
+      {
+        showAddTask && <AddTask onAdd={addTask} />
+      }
       {
         tasks.length > 0 ?
           <Tasks_T
