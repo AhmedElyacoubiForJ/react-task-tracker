@@ -6,29 +6,31 @@ import AddTask from "./components-repetition/AddTask";
 function App_T() {
   const [showAddTask, SetShowAddTask] = useState(false);
   const [tasks, setTasks] = useState([]);
-  
-  useEffect(
-    () => {
-      const getTasks = async () => {
-        const tasksFromJsonServer = await fetchTasks();
-        setTasks(tasksFromJsonServer);
-      };
-      // the call
-      getTasks();
-    },
-    []
-  );
 
-  // Fetch Tasks func.
+  useEffect(() => {
+    // function delegate to fetch json db & init tasks list i.e. ui
+    const getTasks = async () => {
+      const tasksFromJsonServer = await fetchTasks();
+      setTasks(tasksFromJsonServer);
+    };
+    // fetch call
+    getTasks();
+  }, []);
+
+  // fetch json db function definition
   const fetchTasks = async () => {
     const response = await fetch('http://localhost:5000/tasks');
     const data = await response.json();
-    return data;
     //console.log(data);
+    return data;
   }
 
   // delete task
-  const deleteTask = (id) => {
+  const deleteTask = async (id) => {
+    // delete from server
+    await fetch(`http://localhost:5000/tasks/${id}`, {
+      method: 'DELETE'
+    })
     setTasks(
       tasks.filter(
         (task) => {
