@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header_T from './components-repetition/Header_T';
+import Footer from "./components-repetition/Footer";
 import Tasks_T from './components-repetition/Tasks_T';
 import AddTask from "./components-repetition/AddTask";
+import About from "./components-repetition/About";
 
 function App_T() {
   const [showAddTask, SetShowAddTask] = useState(false);
@@ -48,7 +51,7 @@ function App_T() {
   // toggle reminder
   const toggleReminder = async (id) => {
     const taskToToggle = await fetchTask(id);
-    const updatedTask = {...taskToToggle, reminder: !taskToToggle.reminder};
+    const updatedTask = { ...taskToToggle, reminder: !taskToToggle.reminder };
     //console.log('Update from UI', updatedTask);
     const response = await fetch(`http://localhost:5000/tasks/${id}`, {
       method: 'PUT',
@@ -91,24 +94,29 @@ function App_T() {
   }
 
   return (
-    <div className="container">
-      <Header_T
-        onAdd={() => { SetShowAddTask(!showAddTask) }}
-        showAdd={showAddTask}
-      />
-      {
-        showAddTask && <AddTask onAdd={addTask} />
-      }
-      {
-        tasks.length > 0 ?
-          <Tasks_T
-            onToggle={toggleReminder}
-            tasks={tasks}
-            onDelete={deleteTask} /> :
-          'No Tasks to schow'
-      }
-
-    </div>
+    <BrowserRouter>
+      <div className="container">
+        <Header_T
+          onAdd={() => { SetShowAddTask(!showAddTask) }}
+          showAdd={showAddTask}
+        />
+        {
+          showAddTask && <AddTask onAdd={addTask} />
+        }
+        {
+          tasks.length > 0 ?
+            <Tasks_T
+              onToggle={toggleReminder}
+              tasks={tasks}
+              onDelete={deleteTask} /> :
+            'No Tasks to schow'
+        }
+        <Routes>
+          <Route path='/about' Component={About} />
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
