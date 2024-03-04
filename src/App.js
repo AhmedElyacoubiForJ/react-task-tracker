@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Header from './components/Header';
 import Footer from "./components/Footer";
 import Tasks from './components/Tasks';
@@ -7,6 +8,26 @@ import AddTask from "./components/AddTask";
 import About from "./components/About";
 
 function App() {
+  /* const [tasks, setTasks] = useState([
+    {
+      "id": 1,
+      "text": "Doctors Appointment",
+      "day": "Feb 5th at 2:30pm",
+      "reminder": true,
+    },
+    {
+      "id": 2,
+      "text": "Meeting at School",
+      "day": "Feb 6th at 1:30pm",
+      "reminder": true,
+    },
+    {
+      "id": 3,
+      "text": "Food Schopping",
+      "day": "Feb 5th at 2:30pm",
+      "reminder": false,
+    }]) */
+
   const [showAddTask, SetShowAddTask] = useState(false);
   const [tasks, setTasks] = useState([]);
 
