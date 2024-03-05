@@ -115,13 +115,12 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
-      <div className="container">
-        <Header
-          onAdd={() => { SetShowAddTask(!showAddTask) }}
-          showAdd={showAddTask}
-        />
-
+    <div className="container">
+      <Header
+        onAdd={() => { SetShowAddTask(!showAddTask) }}
+        showAdd={showAddTask}
+      />
+      {/* 
         {
           showAddTask && <AddTask onAdd={addTask} />
         }
@@ -132,14 +131,30 @@ function App() {
               tasks={tasks}
               onDelete={deleteTask} /> :
             'No Tasks to schow'
-        }
-        
-        <Routes>
-          <Route path='/about' Component={About} />
-        </Routes>
-        <Footer />
-      </div>
-    </BrowserRouter>
+        } */}
+
+      <Routes>
+        <Route
+          path='/'
+          element={
+            <>
+              {showAddTask && <AddTask onAdd={addTask} />}
+              {tasks.length > 0 ? (
+                <Tasks
+                  tasks={tasks}
+                  onDelete={deleteTask}
+                  onToggle={toggleReminder}
+                />
+              ) : (
+                'No Tasks To Show'
+              )}
+            </>
+          }
+        />
+        <Route path='/about' Component={About} />
+      </Routes>
+      <Footer />
+    </div>
   );
 }
 
